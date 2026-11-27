@@ -1,5 +1,7 @@
 # somi-api
 
+[![CI](https://github.com/ParkZeon/somi-api/actions/workflows/ci.yml/badge.svg)](https://github.com/ParkZeon/somi-api/actions/workflows/ci.yml)
+
 SOMI MCP server: a Spring Boot + Spring AI service that exposes the boss's SOMI-OS data to Claude as MCP tools.
 
 ## Tools
@@ -23,7 +25,7 @@ claude mcp add --transport http somi http://127.0.0.1:8080/mcp
 
 ## Stack
 
-Java 21, Spring Boot 4.1, Spring AI 2.0 MCP server (Streamable HTTP), JUnit 5.
+Java 21, Spring Boot 4.1, Spring AI 2.0 MCP server (Streamable HTTP), JUnit 5, GitHub Actions CI (`./mvnw verify` on every PR and push to main).
 
 ## Roadmap
 

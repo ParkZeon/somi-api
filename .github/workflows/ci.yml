@@ -1,14 +1,16 @@
 name: CI
+permissions:
+  contents: read
 
 on:
   pull_request:
   push:
     branches: [main]
 
-# A newer push to the same branch or PR cancels the run still in progress.
+# On PRs, a newer push cancels the run still in progress; pushes to main always finish.
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   verify:
